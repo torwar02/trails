@@ -7,15 +7,18 @@ def make_db(state):
     CREATE TABLE IF NOT EXISTS {state_name_code_name_dict[state]}(
     name VARCHAR(255),
     coords VARCHAR(255),
-    distance VARCHAR(255),
-    climb VARCHAR(255),
-    descent VARCHAR(255),
-    avg_time TIME,
-    activities VARCHAR(255),
-    difficulty VARCHAR(255),
-    grade VARCHAR(255),
-    altitude_start VARCHAR(255),
-    altitude_end VARCHAR(255)
+    Distance VARCHAR(255),
+    'Avg time' VARCHAR(255),
+    Climb VARCHAR(255),
+    Descent VARCHAR(255),
+    Activities VARCHAR(255),
+    'Riding Area' VARCHAR(255),
+    'Difficulty Rating' VARCHAR(255),
+    'Dogs Allowed' VARCHAR(255),
+    'Local Popularity' VARCHAR(255),
+    'Altitude start' VARCHAR(255),
+    'Altitude end' VARCHAR(255),
+    Grade VARCHAR(255)
     );
     """
     cursor = conn.cursor()
