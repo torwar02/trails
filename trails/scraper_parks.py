@@ -128,7 +128,7 @@ def state_scraper(state_name):
 
     driver.quit()
     
-state_scraper("Maine")
+state_scraper("California")
 
 
 #states = database_info.state_name_code_name_dict
