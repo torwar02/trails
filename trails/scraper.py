@@ -70,20 +70,22 @@ def scrape_basic_stats(basic_vars_dict):
     
     The function uses conditional statements as not all of the variables are available.
     """
-    basic_stats_div = driver.find_element(By.ID, "basicTrailStats")
-    
-    padded10_divs = basic_stats_div.find_elements(By.CLASS_NAME, "padded10")
-    
-    for padded10_div in padded10_divs:
-        col_3_divs = padded10_div.find_elements(By.CLASS_NAME, "col-3")
-        for col_3_div in col_3_divs:
-            small_grey_div = col_3_div.find_element(By.CLASS_NAME, "small.grey")
-            variable_name = small_grey_div.text
-            large_div = col_3_div.find_element(By.CSS_SELECTOR, ".large, .large.hovertip")
-            variable_value = large_div.text
-            if variable_name in basic_vars_dict:
-                basic_vars_dict[variable_name] = variable_value
-                
+    try:
+        basic_stats_div = driver.find_element(By.ID, "basicTrailStats")
+        
+        padded10_divs = basic_stats_div.find_elements(By.CLASS_NAME, "padded10")
+        
+        for padded10_div in padded10_divs:
+            col_3_divs = padded10_div.find_elements(By.CLASS_NAME, "col-3")
+            for col_3_div in col_3_divs:
+                small_grey_div = col_3_div.find_element(By.CLASS_NAME, "small.grey")
+                variable_name = small_grey_div.text
+                large_div = col_3_div.find_element(By.CSS_SELECTOR, ".large, .large.hovertip")
+                variable_value = large_div.text
+                if variable_name in basic_vars_dict:
+                    basic_vars_dict[variable_name] = variable_value
+    except:
+        pass
     return basic_vars_dict
                 
 
@@ -104,14 +106,17 @@ def scrape_tables(var_list, element_id, var_dict):
     ``var_dict``'s values.
     
     """
-    li_elements = driver.find_elements("xpath", f"//ul[contains(@id, '{element_id}')]//li")
-    for li_element in li_elements:
-        term_div = li_element.find_elements(By.CLASS_NAME, "term")
-        definition_div = li_element.find_elements(By.CLASS_NAME, "definition")
-        for idx, terms in enumerate(term_div):
-            if terms.text in var_list:
-                var_dict[terms.text] = [definition_div[idx].text]
-                
+    try:
+        li_elements = driver.find_elements("xpath", f"//ul[contains(@id, '{element_id}')]//li")
+        for li_element in li_elements:
+            term_div = li_element.find_elements(By.CLASS_NAME, "term")
+            definition_div = li_element.find_elements(By.CLASS_NAME, "definition")
+            for idx, terms in enumerate(term_div):
+                if terms.text in var_list:
+                    var_dict[terms.text] = [definition_div[idx].text]
+    
+    except:
+        pass
     return var_dict
 
 
@@ -154,11 +159,11 @@ def state_scraper(state_name):
     combined and added into `trails.db`.
     
     """
-    start_url = f"https://www.trailforks.com/region/{state_name}/trails/?activitytype=6&difficulty=2,3,4,5,6,8"
+    start_url = f"https://www.trailforks.com/region/{state_name}/trails//?activitytype=6&region=3106&page=93"
     url_list = [start_url]
     
     for page_num in range(state_page_dict[state_name]):
-        url_list.append(start_url + f"&page={page_num+2}")
+        url_list.append(start_url + f"&page={page_num+94}")
         
     for page_num in range(state_page_dict[state_name]):
         href_list = []
@@ -189,7 +194,7 @@ def state_scraper(state_name):
     driver.quit()
 
 
-state_scraper("Oklahoma")
+state_scraper("California")
 
 
 

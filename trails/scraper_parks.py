@@ -1,3 +1,4 @@
+import selenium
 import csv
 import asyncio
 from selenium.webdriver.common.keys import Keys
@@ -128,7 +129,9 @@ def state_scraper(state_name):
 
     driver.quit()
     
-state_scraper("California")
+    
+state_scraper("Wyoming")
+
 
 
 #states = database_info.state_name_code_name_dict
