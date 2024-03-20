@@ -9,8 +9,11 @@
       <router-link to="/recommdation" class="router-link">
         Recommdation
       </router-link>
-      <router-link to="/explore" class="router-link">Explore</router-link>
+      <router-link to="/nationalParkList" class="router-link">
+        Explore
+      </router-link>
       <router-link to="/saved" class="router-link">Saved</router-link>
+      <router-link to="/PhotoShop" class="router-link"> PhotoShop </router-link>
     </div>
     <!-- User info  -->
     <div class="user">
