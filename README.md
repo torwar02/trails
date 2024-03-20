@@ -26,4 +26,4 @@ In other words, we should at least be able to let the user feasibly generate a l
 There are two webscrapers. One is in the TripAdvisor folder
 
 # Word Embedding
-There is a file called national_parks.ipynb which contains instructions and functions on how to create and return dataframes and geogrpahical plots of similar trails! 
+There is a file called national_parks.ipynb. The file contains instructions and functions which return most similar trails to the one's you enjoy and also geographical plots to visualize where in the United States these trails are! 
