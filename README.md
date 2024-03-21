@@ -19,8 +19,8 @@ The app/website would give explanations as to why it has recommended certain tra
 Partial Success:
 
 However, we only acheived Partial Success as the deployment of our functions into a dynamic website or app was not fully realized.
-The program would at the very least be able to return the trails/locations that best match the user’s criteria in some sort of object such as a pandas DataFrame.
-It would also be able to return the necessary information to quickly and easily create a plotly plot.
+The program would at the very least returned the trails/locations that best matched our user’s criteria in a pandas DataFrame.
+It would returned the necessary information to quickly and easily create a plotly plot such that user's could visualize where in the United States these similar trails are.
 In other words, we should at least be able to let the user feasibly generate a lot of the information themselves that they would otherwise find in the “Full Success” results. The hard part of making the recommendation and such should be done by the program!
 
 # Webscraping
