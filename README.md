@@ -10,7 +10,7 @@ Our project addresses finding new places to visit based upon what type of hiking
 
 Full Success:
 
-We’ll make either a dynamic website or app where the user would enter information about the type of hike they’re interested in such as geographic features or recommendations based on previous hikes.
+We planned on making either a dynamic website or app where the user would enter information about the type of hike they’re interested in such as geographic features or recommendations based on previous hikes.
 We’ll use web scraping to collect data from alltrails.com and other websites that contain information about hiking trails.
 We’ll need to use advanced machine learning techniques to gain as much information as we can about the trails: interpreting reviews left by hikers to understand what a trail is like and to implement a recommendation system based on a user’s history.
 We’ll use plotly geographical plots to showcase trail locations and perhaps other information.
@@ -18,12 +18,13 @@ The app/website would give explanations as to why it has recommended certain tra
 
 Partial Success:
 
+However, we only acheived Partial Success as the deployment of our functions into a dynamic website or app was not fully realized.
 The program would at the very least be able to return the trails/locations that best match the user’s criteria in some sort of object such as a pandas DataFrame.
 It would also be able to return the necessary information to quickly and easily create a plotly plot.
 In other words, we should at least be able to let the user feasibly generate a lot of the information themselves that they would otherwise find in the “Full Success” results. The hard part of making the recommendation and such should be done by the program!
 
 # Webscraping
-There are two webscrapers. One is the Trip Advisor webscraper. In order to get the csv file containing reviews of all National Parks Trail, open up the command prompt. From there, navigate to the folder which contains the spider and run `scrapy crawl trip_advisor -o national_parks.csv`. Great, now we can analyze our reviews! 
+There are two webscrapers. One is the Trip Advisor webscraper. In order to get the csv file containing reviews of all National Parks Trail, open up the command prompt. From there, navigate to the folder which contains the spider and run `scrapy crawl trip_advisor -o national_parks.csv`. In addition, there is a file in the folder called `coords.xlsx`. We need this csv file later in order to plot geographical plots of where our recommended trails are. Great, now we can analyze our reviews! 
 
 # Word Embedding
-There is a file called national_parks.ipynb. The file contains instructions on how to utilize functions to return the most similar trails to the one's you enjoy, in addition to constructing geographical plots to visualize where in the United States these trails are! In particular, the `plotting_parks` function utilizes the `total_similarity` function which calls the `comment_similarity` function. Make sure to run all the functions as well as the preprocessing code in order to have a csv file that the function is able to read accurately. Additionally, make sure to download the packages `spacy` and `gensim` for word embeddings. The code contains the line `!python -m spacy download en_core_web_lg` and this will download the 560 MB model such that we do not have to create it ourself! 
+There is a file called `national_parks.ipynb. The file contains instructions on how to utilize functions to return the most similar trails to the one's you enjoy, in addition to constructing geographical plots to visualize where in the United States these trails are! In particular, the `plotting_parks` function utilizes the `total_similarity` function which calls the `comment_similarity` function. Make sure to run all the functions as well as the preprocessing regex dataframe code in order to have a csv file which the function needs as a parameter. Additionally, make sure to download the packages `spacy` and `gensim` pckages for word embeddings. Pay attention to the the code that contains the line `!python -m spacy download en_core_web_lg`, as this will download the 560 MB model such that we do not have to create it ourself! 
