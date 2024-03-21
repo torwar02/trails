@@ -23,7 +23,7 @@ It would also be able to return the necessary information to quickly and easily 
 In other words, we should at least be able to let the user feasibly generate a lot of the information themselves that they would otherwise find in the “Full Success” results. The hard part of making the recommendation and such should be done by the program!
 
 # Webscraping
-There are two webscrapers. One is in the TripAdvisor folder
+There are two webscrapers. One is the Trip Advisor webscraper. In order to get the csv file containing reviews of all National Parks Trail, open up the command prompt. From there, navigate to the folder which contains the spider and run `scrapy crawl trip_advisor -o national_parks.csv`. Great, now we can analyze our reviews! 
 
 # Word Embedding
-There is a file called national_parks.ipynb. The file contains instructions on how to utilize functions to return the most similar trails to the one's you enjoy, in addition to constructing geographical plots to visualize where in the United States these trails are! 
+There is a file called national_parks.ipynb. The file contains instructions on how to utilize functions to return the most similar trails to the one's you enjoy, in addition to constructing geographical plots to visualize where in the United States these trails are! In particular, the `plotting_parks` function utilizes the `total_similarity` function which calls the `comment_similarity` function. Make sure to run all the functions as well as the preprocessing code in order to have a csv file that the function is able to read accurately. Additionally, make sure to download the packages `spacy` and `gensim` for word embeddings. The code contains the line `!python -m spacy download en_core_web_lg` and this will download the 560 MB model such that we do not have to create it ourself! 
