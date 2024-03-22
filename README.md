@@ -1,5 +1,7 @@
 Group 7: Jiaxin Luo, Zion Gassner, Tyler Nguyen
 
+Check our [Colab tutorial](https://colab.research.google.com/drive/1nqJLP57fWBSJXRDAukjobWJQScYNlV4n?usp=chrome_ntp)!
+
 # Abstract
 
 Using the internet, it’s very easy to find information about hiking trails throughout the United States, but there’s a problem: it’s a lot easier to browse through lists of trails available online, like on the website alltrails.com, and filtering by location. What are you supposed to do if you don’t know much about an area but still want to go hiking, or what if you want to do certain things on your hike but don’t know where to go? You could do lots of research online yourself, reading articles or sifting through different locations, but this process can be very difficult, especially if you want to go somewhere that you’ve never been.
