@@ -2,6 +2,21 @@ import numpy as np
 from PIL import Image
 
 def combined_display(image, matte):
+    """
+    Combine an input image with its corresponding matte (alpha channel) for display.
+
+    Parameters:
+    - image: PIL.Image or ndarray
+        Input image to be combined.
+    - matte: PIL.Image or ndarray
+        Corresponding matte (alpha channel) for the input image.
+
+    Returns:
+    - combined: PIL.Image
+        Combined image displaying the original image, predicted foreground, and matte.
+    - middle_image: PIL.Image
+        Image representing the predicted foreground extracted from the combined image.
+    """
     # calculate display resolution
     w, h = image.width, image.height
     rw, rh = 800, int(h * 800 / (3 * w))
