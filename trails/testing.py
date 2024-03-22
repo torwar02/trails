@@ -10,9 +10,9 @@ def get_frame_csv(state):
     SELECT * FROM {state}
     """
     df = pd.read_sql_query(cmd, conn)
-    df.to_csv('park_test_Vermont.csv',index = False)
+    df.to_csv('parks_wyoming.csv',index = False)
 #
-get_frame_csv("Vermont")
+get_frame_csv("Wyoming")
 
 #for key, value in database_info.state_name_code_name_dict.items():
 #    database_info.make_db(key)

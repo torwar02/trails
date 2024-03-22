@@ -159,11 +159,11 @@ def state_scraper(state_name):
     combined and added into `trails.db`.
     
     """
-    start_url = f"https://www.trailforks.com/region/{state_name}/trails//?activitytype=6&region=3106&page=93"
+    start_url = f"https://www.trailforks.com/region/{state_name}/trails//?activitytype=6&region=3106"
     url_list = [start_url]
     
     for page_num in range(state_page_dict[state_name]):
-        url_list.append(start_url + f"&page={page_num+94}")
+        url_list.append(start_url + f"&page={page_num+2}")
         
     for page_num in range(state_page_dict[state_name]):
         href_list = []
